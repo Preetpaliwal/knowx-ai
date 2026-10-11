@@ -1,35 +1,33 @@
-﻿# Secrets
+﻿# Environment variables and secrets
 .env
 .env.*
 !.env.example
+frontend/.env*
+!frontend/.env.example
 backend/.env
 backend/.env.*
 !backend/.env.example
-frontend/.env*
-!frontend/.env.example
 
 # Database
 *.db
 *.sqlite
 *.sqlite3
 
-# Dependencies
-node_modules/
-.next/
+# Python
 __pycache__/
 *.pyc
 venv/
 .venv/
 
-# Build and IDE
+# Dependencies and build output
+node_modules/
+.next/
 dist/
 build/
+
+# IDE and logs
 .vscode/
 .idea/
 *.log
-
-backend/venv/
-frontend/node_modules/
-frontend/.next/
 
 frontend/tsconfig.tsbuildinfo

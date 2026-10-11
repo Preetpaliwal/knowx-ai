@@ -1,0 +1,337 @@
+@import "tailwindcss";
+
+/* ============================================
+   STUDYMET AI - BRUTALIST AI SAAS DESIGN SYSTEM
+   Inspired by v0-design-brutalist-ai-saa-s
+   ============================================ */
+
+:root {
+  /* Cyber-Brutalist Design System with Light Gray Background */
+  --background: #F1F3F5;
+  --sidebar-bg: #E9ECEF;
+  --foreground: #0F1629;
+  --card-bg: #FFFFFF;
+  --muted-foreground: #64748B;
+  --border: #0F1629;
+
+  /* Industrial Accent Colors */
+  --accent-orange: #ea580c;
+  --accent-orange-hover: #c2410c;
+  --accent-green: #16a34a;
+  --accent-cyan: #0284c7;
+
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Space Mono', 'Courier New', monospace;
+}
+
+/* Dark theme overrides if class="dark" is applied */
+.dark {
+  --background: #090D16;
+  --foreground: #F8FAFC;
+  --card-bg: #111827;
+  --muted-foreground: #94A3B8;
+  --border: #F8FAFC;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dot Grid Background */
+.dot-grid-bg {
+  background-image: radial-gradient(rgba(15, 22, 41, 0.18) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .dot-grid-bg {
+  background-image: radial-gradient(rgba(248, 250, 252, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Brutalist Hard Cards */
+.brutalist-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0px var(--border);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutalist-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border);
+}
+
+.brutalist-card-static {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border);
+}
+
+/* Brutalist Buttons */
+.brutalist-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background-color: var(--foreground);
+  color: var(--background);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.brutalist-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--accent-orange);
+}
+
+.brutalist-btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid var(--border);
+  box-shadow: 3px 3px 0px var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.brutalist-btn-orange:hover {
+  background-color: var(--accent-orange-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--border);
+}
+
+.brutalist-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.brutalist-btn-secondary:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+  box-shadow: 3px 3px 0px var(--accent-orange);
+}
+
+/* Brutalist Inputs */
+.brutalist-input {
+  width: 100%;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border);
+  padding: 0.625rem 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutalist-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 3px 3px 0px var(--border);
+}
+
+/* Terminal & Code Blocks */
+.terminal-window {
+  background-color: #0c0f17;
+  color: #f1f5f9;
+  border: 2px solid var(--border);
+  font-family: var(--font-mono);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border);
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 0.5rem 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Animations & Effects */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 2.5s infinite ease-in-out;
+}
+
+/* Section Divider Labels & Heading System */
+.section-marker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* Brutalist Heading & Subheading System */
+.brutalist-heading {
+  font-family: var(--font-mono);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.brutalist-subheading {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  letter-spacing: 0.05em;
+}
+
+/* Text Highlights */
+.highlight-orange {
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+  padding: 0.1rem 0.4rem;
+  font-weight: 800;
+  border: 1.5px solid var(--border);
+  box-shadow: 2px 2px 0px var(--border);
+  display: inline-block;
+}
+
+.highlight-green {
+  background-color: var(--accent-green);
+  color: #FFFFFF;
+  padding: 0.1rem 0.4rem;
+  font-weight: 800;
+  border: 1.5px solid var(--border);
+  box-shadow: 2px 2px 0px var(--border);
+  display: inline-block;
+}
+
+.highlight-cyan {
+  background-color: var(--accent-cyan);
+  color: #FFFFFF;
+  padding: 0.1rem 0.4rem;
+  font-weight: 800;
+  border: 1.5px solid var(--border);
+  box-shadow: 2px 2px 0px var(--border);
+  display: inline-block;
+}
+
+/* Legacy Card Fallback & Utility */
+.study-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0px var(--border);
+  font-family: var(--font-mono);
+}
+
+.study-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-orange);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-orange);
+}
